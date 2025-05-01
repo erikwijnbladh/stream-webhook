@@ -1,0 +1,20 @@
+{
+  "name": "stream-webhook",
+  "version": "1.0.0",
+  "description": "Twitch stream Discord notifier",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "vercel-build": "echo 'Build step completed'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
