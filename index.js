@@ -1,5 +1,9 @@
 require("dotenv").config();
 const axios = require("axios");
+const express = require("express");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Discord webhook URL
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
@@ -120,6 +124,15 @@ async function main() {
 
   // Initial check
   await checkStreamStatus();
+
+  // Start the Express server
+  app.get("/", (req, res) => {
+    res.send("Twitch Stream Monitor is running!");
+  });
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 }
 
 main().catch(console.error);
